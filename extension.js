@@ -22,7 +22,8 @@ function activate(context) {
 
         editor.edit(function (editBuilder) {
             for(var i = 0; i < selections.length; i++){
-                var locale = vscode.workspace.getConfiguration('insertDateTime')['locale'];
+                //var locale = vscode.workspace.getConfiguration('insertDateTime')['locale'];
+                var locale = "en-UK";                
                 var d = new Date;
                 if(locale != '')
                     var txt = d.toLocaleString(locale);
