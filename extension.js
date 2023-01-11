@@ -46,17 +46,19 @@ function activate(context) {
                 var locale = "en-UK";
         
 		var d = new Date;
-                var txt = weekday[d.getDay()]
+                // var txt = weekday[d.getDay()]
 
                 if(locale != '')
-                    var txt = txt + ", " + d.toLocaleString(locale);
+                    // var txt = txt + ", " + d.toLocaleString(locale);
+                    var txt = d.toLocaleString(locale);
                 else
-                    var txt = txt + ", " + d.toLocaleString();
+                    // var txt = txt + ", " + d.toLocaleString();
+                    var txt = d.toLocaleString();
                                
                 var weekNumber = Math.ceil(daysPassed(d) / 7)
                 var quarterNumber = Math.floor((d.getMonth() + 3) / 3);
 
-                var txt = txt + " | Q:" + quarterNumber + " | W:" + weekNumber  + " |  Year:[";
+                var txt = txt + ", " + weekday[d.getDay()] + " | W:" + weekNumber  + " | Q:" + quarterNumber + " | Y:[";
                 // adding Year Progress Bar
                 for (n = 0; n < 50; n++) {
                     if (current_percent < (n+1)*2) {
@@ -66,7 +68,7 @@ function activate(context) {
                         var txt = txt + "▓"; // alt-178
                     }    
                     };
-                var txt = txt + "]" + parseFloat(current_percent).toFixed(0)+'%';
+                var txt = txt + "] " + parseFloat(current_percent).toFixed(1)+'%';
 
                 editBuilder.replace(selections[i], "");
                 editBuilder.insert(selections[i].active, txt);
