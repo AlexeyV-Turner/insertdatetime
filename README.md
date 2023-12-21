@@ -1,5 +1,8 @@
 # larrydanna.insertdatetime
 
+## Extention location
+~/.vscode/extensions/larrydanna.insertdatetime-0.0.2
+
 ## Insert Date Time
 Insert the Date and Time.
 
